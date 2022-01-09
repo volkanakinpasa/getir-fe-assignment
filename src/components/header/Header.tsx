@@ -14,11 +14,6 @@ const HeaderStyle = styled.header`
   ${tw`flex items-center justify-center w-full`}
 `;
 
-interface IRowProps {
-  justify?: string;
-  align?: string;
-}
-
 function Header() {
   return (
     <HeaderStyle>

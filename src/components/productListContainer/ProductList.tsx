@@ -24,6 +24,16 @@ function ProductList() {
         <Product />
         <Product />
         <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </ProductListStyle>
     </ProductListContainer>
   );

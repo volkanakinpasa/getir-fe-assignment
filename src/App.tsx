@@ -3,6 +3,7 @@ import './App.css';
 import tw, { css, styled, theme } from 'twin.macro';
 
 import FilterSorting from './components/productFilterBar/FilterSorting';
+import FilterTags from './components/productFilterBar/FilterTags';
 import Header from './components/header/Header';
 import ProductListContainer from './components/productListContainer/ProductListContainer';
 import { ProductTitle } from './components/styles/Title';
@@ -29,8 +30,8 @@ const main = css`
 `;
 
 const LeftBar = styled.section`
-  ${tw`mr-4`}
   width: 296px;
+  ${tw`mr-4 flex flex-col space-y-6`}
 `;
 
 const RigthBar = styled.section`
@@ -55,8 +56,8 @@ function App() {
       <main css={[main]}>
         <LeftBar>
           <FilterSorting />
-          {/* <FilterBrands />
-          <FilterTags /> */}
+
+          <FilterTags />
         </LeftBar>
         <RigthBar>
           <ProductTitle>Products</ProductTitle>

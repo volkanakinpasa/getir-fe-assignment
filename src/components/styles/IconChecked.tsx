@@ -1,9 +1,11 @@
 import { styled } from 'twin.macro';
 
 const IconChecked = styled.div`
-  background: url(./checked.svg) no-repeat center center;
   width: 100%;
   height: 100%;
+
+  ${({ iconName }: { iconName: string }) =>
+    `background: url(./${iconName}.svg) no-repeat center center;`}
 `;
 
 export default IconChecked;

@@ -8,17 +8,16 @@ import { Sorting } from '../../common/enums';
 /** @jsxImportSource @emotion/react */
 
 const container = css`
-  ${tw`mt-3 p-6`}
-
   height: 184px;
   background: #ffffff;
   box-shadow: 0px 6px 24px rgba(93, 62, 188, 0.04);
   border-radius: 2px;
+  ${tw`mt-3 p-6 flex flex-col space-y-4`}
 `;
 
 const row = css`
-  ${tw`mt-3 flex items-center`}
   height: 22px;
+  ${tw`flex items-center`}
 `;
 
 const text = css`
@@ -56,7 +55,6 @@ function FilterSorting() {
           />
           <div css={[text]}>Price high to low</div>
         </div>
-
         <div css={[row]}>
           <RadioButton
             onClick={() => onClick(Sorting.NewToOld)}

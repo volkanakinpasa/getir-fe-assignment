@@ -1,5 +1,4 @@
 import tw, { styled } from 'twin.macro';
-/** @jsxImportSource @emotion/react */
 
 const ProductImage = styled.div`
   ${tw`flex items-center justify-center w-full sm:(w-96)`}

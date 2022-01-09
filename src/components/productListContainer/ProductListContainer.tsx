@@ -1,12 +1,12 @@
+import ProductItemType from './ProductItemType';
 import ProductList from './ProductList';
-import ProductTags from './ProductTags';
 
 /** @jsxImportSource @emotion/react */
 
 function ProductListContainer() {
   return (
     <>
-      {/* <ProductTags /> */}
+      <ProductItemType />
       <ProductList />
     </>
   );

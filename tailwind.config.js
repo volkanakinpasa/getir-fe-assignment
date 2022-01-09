@@ -1,8 +1,4 @@
 module.exports = {
-  // purge: [],
-  // process.env.NODE_ENV === 'development'
-  //   ? []
-  //   : ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
@@ -15,9 +11,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        primaryBlue: '#1EA4CE',
         black: '#525252',
+        black500: '#6F6F6F',
         grayscale: '#697488',
-      }, // new
+      },
     },
   },
   plugins: [],

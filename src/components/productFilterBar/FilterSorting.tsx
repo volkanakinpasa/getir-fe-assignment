@@ -1,6 +1,7 @@
 import tw, { css, theme } from 'twin.macro';
 import { useEffect, useState } from 'react';
 
+import { FilterTitle } from '../styles/Title';
 import RadioButton from '../RadioButton';
 import { Sorting } from '../../common/enums';
 
@@ -22,11 +23,8 @@ const row = css`
 
 const text = css`
   color: ${theme`colors.black`};
+  letter-spacing: 0.16px;
   ${tw`ml-3`}
-`;
-
-const header = css`
-  color: ${theme`colors.grayscale`};
 `;
 
 function FilterSorting() {
@@ -42,7 +40,7 @@ function FilterSorting() {
 
   return (
     <div>
-      <div css={[header]}>Sorting</div>
+      <FilterTitle>Sorting</FilterTitle>
       <div css={[container]}>
         <div css={[row]}>
           <RadioButton
@@ -57,6 +55,21 @@ function FilterSorting() {
             selected={selected === Sorting.HighToLow}
           />
           <div css={[text]}>Price high to low</div>
+        </div>
+
+        <div css={[row]}>
+          <RadioButton
+            onClick={() => onClick(Sorting.NewToOld)}
+            selected={selected === Sorting.NewToOld}
+          />
+          <div css={[text]}>New to old</div>
+        </div>
+        <div css={[row]}>
+          <RadioButton
+            onClick={() => onClick(Sorting.OldToNew)}
+            selected={selected === Sorting.OldToNew}
+          />
+          <div css={[text]}>Old to new</div>
         </div>
       </div>
     </div>

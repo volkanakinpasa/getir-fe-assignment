@@ -1,14 +1,14 @@
 import './App.css';
 
-/** @jsxImportSource @emotion/react */
-import tw, { css, styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
 
-import FilterBrands from './components/productFilterBar/FilterBrands';
 import FilterSorting from './components/productFilterBar/FilterSorting';
-import FilterTags from './components/productFilterBar/FilterTags';
 import Header from './components/header/Header';
-import ProductListContainer from './components/ProductListContainer';
+import ProductListContainer from './components/productListContainer/ProductListContainer';
+import { ProductTitle } from './components/styles/Title';
 import { createGlobalStyle } from 'styled-components';
+
+/** @jsxImportSource @emotion/react */
 
 const AppStyle = styled.div`
   background: #fafafa;
@@ -33,6 +33,19 @@ const LeftBar = styled.section`
   width: 296px;
 `;
 
+const RigthBar = styled.section`
+  ${tw`w-full h-full`}
+  max-width: 608px;
+`;
+
+const Footer = styled.footer`
+  margin-top: 136px;
+  font-size: 13px;
+  line-height: 174%;
+  color: ${theme`colors.primaryBlue`};
+  ${tw`w-full flex items-center justify-center text-center py-6`}
+`;
+
 function App() {
   return (
     <AppStyle>
@@ -42,13 +55,15 @@ function App() {
       <main css={[main]}>
         <LeftBar>
           <FilterSorting />
-          <FilterBrands />
-          <FilterTags />
+          {/* <FilterBrands />
+          <FilterTags /> */}
         </LeftBar>
-        <section>
+        <RigthBar>
+          <ProductTitle>Products</ProductTitle>
           <ProductListContainer />
-        </section>
+        </RigthBar>
       </main>
+      <Footer>2019 Market</Footer>
     </AppStyle>
   );
 }

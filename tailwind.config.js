@@ -12,10 +12,13 @@ module.exports = {
     extend: {
       colors: {
         primaryBlue: '#1EA4CE',
-        black: '#525252',
+        primaryBlack: '#525252',
         black500: '#6F6F6F',
         grayscale: '#697488',
         primaryWhite: '#ffffff',
+        white2: '#fefefe',
+        gray1: '#FAFAFA',
+        gray2: '#a8a8a8',
       },
     },
   },

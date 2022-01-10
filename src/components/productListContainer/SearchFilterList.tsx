@@ -1,6 +1,8 @@
 import tw, { css, theme } from 'twin.macro';
 
 import Checkbox from '../Checkbox';
+import ISearchFilterList from '../../interfaces/ISearchFilterList';
+import { letterSpacing } from '../styles/common.styled';
 import { useEffect } from 'react';
 
 /** @jsxImportSource @emotion/react */
@@ -25,16 +27,15 @@ const row = css`
 `;
 
 const text = css`
-  color: ${theme`colors.black`};
-  letter-spacing: 0.16px;
-  ${tw`ml-3`}
+  ${letterSpacing('0.16px')}
+  ${tw`ml-3 text-primaryBlack`}
 `;
 
 function SearchFilterList({
   list,
   onSelect,
 }: {
-  list: string[];
+  list: ISearchFilterList[];
   onSelect: (value: string) => void;
 }) {
   const onClick = (value: string) => {};
@@ -49,12 +50,14 @@ function SearchFilterList({
       </div>
       {list.map((item) => {
         return (
-          <div css={row} key={item}>
+          <div css={row} key={item.value}>
             <Checkbox
               onClick={(value: string) => onClick(value)}
               selected={false}
             />
-            <div css={[text]}> {item}</div>
+            <div css={[text]}>
+              {item.name} ({item.count})
+            </div>
           </div>
         );
       })}

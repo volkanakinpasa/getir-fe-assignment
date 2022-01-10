@@ -1,18 +1,5 @@
-import tw, { styled, theme } from 'twin.macro';
-
+import HeaderStyle from '../styles/Header.styled';
 import logo from '../../assets/logo.png';
-
-const HeaderStyle = styled.header`
-  background: ${theme`colors.primaryBlue`};
-  width: 100%;
-  height: 76px;
-
-  img {
-    width: 141px;
-    height: 40px;
-  }
-  ${tw`flex items-center justify-center w-full`}
-`;
 
 function Header() {
   return (

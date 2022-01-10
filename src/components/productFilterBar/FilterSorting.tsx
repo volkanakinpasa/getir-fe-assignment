@@ -1,9 +1,10 @@
 import tw, { css, theme } from 'twin.macro';
 import { useEffect, useState } from 'react';
 
-import { FilterTitle } from '../styles/Title';
+import { FilterTitle } from '../styles/Title.styled';
 import RadioButton from '../RadioButton';
 import { Sorting } from '../../common/enums';
+import { letterSpacing } from '../styles/common.styled';
 
 /** @jsxImportSource @emotion/react */
 
@@ -21,9 +22,8 @@ const row = css`
 `;
 
 const text = css`
-  color: ${theme`colors.black`};
-  letter-spacing: 0.16px;
-  ${tw`ml-3`}
+  ${letterSpacing('0.16px')}
+  ${tw`ml-3 text-primaryBlack`}
 `;
 
 function FilterSorting() {

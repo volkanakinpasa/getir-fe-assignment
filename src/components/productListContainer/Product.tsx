@@ -1,3 +1,4 @@
+import { fontSize12, fontSize14, lineHeight20 } from '../styles/common.styled';
 import tw, { css, styled, theme } from 'twin.macro';
 
 import ProductImage from './ProductImage';
@@ -15,30 +16,26 @@ const ProductContainer = styled.div`
 
 const price = css`
   height: 23px;
-  line-height: 20px;
-  color: ${theme`colors.primaryBlue`};
-
+  ${lineHeight20}
   font-family: Helvetica;
   font-style: normal;
   font-weight: normal;
-  ${tw`mt-2`}
+  ${tw`mt-2 text-primaryBlue`}
 `;
 const productName = css`
   height: 40px;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
+  ${fontSize14}
+  ${lineHeight20}
 
   color: #191919;
 `;
 const addButton = css`
   width: 100%;
   height: 22px;
-  background: ${theme`colors.primaryBlue`};
   text-align: center;
-  color: #ffffff;
-  font-size: 12px;
-  ${tw`mt-2 flex items-center justify-center`}
+  ${fontSize12}
+  ${tw`mt-2 flex items-center justify-center text-primaryWhite bg-primaryBlue`}
 `;
 
 function Product() {

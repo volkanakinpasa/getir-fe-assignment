@@ -1,3 +1,4 @@
+import { fontSize14, letterSpacing, lineHeight24 } from './common.styled';
 import tw, { styled } from 'twin.macro';
 
 const SearchFilter = styled.input`
@@ -8,14 +9,11 @@ const SearchFilter = styled.input`
   box-sizing: border-box;
   border-radius: 2px;
 
-  font-size: 14px;
-  line-height: 24px;
+  ${fontSize14}
+  ${lineHeight24}
 
-  letter-spacing: 0.15px;
-
-  color: #a8a8a8;
-
-  ${tw`px-4`}
+  ${letterSpacing('0.15px')}
+  ${tw`px-4 text-gray2`}
 `;
 
 export default SearchFilter;

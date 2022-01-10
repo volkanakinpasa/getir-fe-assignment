@@ -35,3 +35,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - IconChecked passing dublicated svg. (this must be refactored)
 - Add show hide icon on left side for xs, sm, md breakpoints
 - I used some common styles in common.styled.ts in order to re-use css. but haven't moved all classes in here.
+- align ... in pagination. and

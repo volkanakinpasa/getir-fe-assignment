@@ -1,4 +1,4 @@
-import tw, { css, theme } from 'twin.macro';
+import tw, { css } from 'twin.macro';
 import { useEffect, useState } from 'react';
 
 import { FilterTitle } from '../styles/Title.styled';

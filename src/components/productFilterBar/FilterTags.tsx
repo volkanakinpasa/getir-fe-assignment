@@ -16,13 +16,13 @@ const container = css`
 `;
 
 const list: ISearchFilterList[] = [
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
-  { value: 'Desk', name: 'Desk', count: 11 },
+  { value: 'Desk1', name: 'Desk', count: 11 },
+  { value: 'Desk2', name: 'Desk', count: 11 },
+  { value: 'Desk3', name: 'Desk', count: 11 },
+  { value: 'Desk4', name: 'Desk', count: 11 },
+  { value: 'Desk5', name: 'Desk', count: 11 },
+  { value: 'Desk6', name: 'Desk', count: 11 },
+  { value: 'Desk7', name: 'Desk', count: 11 },
 ];
 
 function FilterTags() {

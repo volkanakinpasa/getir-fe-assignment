@@ -1,40 +1,62 @@
 import tw, { styled } from 'twin.macro';
+import { useEffect, useState } from 'react';
 
+import Pagination from './Pagination';
 import Product from './Product';
 
 const ProductListContainer = styled.div`
   ${tw`w-full mt-4`}
-  background: #FFFFFF;
-  border-radius: 2px;
-  box-shadow: 0px 4px 24px 0px #5d3ebc0a;
-  padding: 20px;
 `;
 
 const ProductListStyle = styled.div`
-  ${tw`w-full flex items-center justify-center h-full grid gap-5 grid-cols-2 sm:grid-cols-4`}
+  border-radius: 2px;
+  box-shadow: 0px 4px 24px 0px #5d3ebc0a;
+  padding: 20px;
+  ${tw`w-full flex items-center justify-center h-full grid gap-5 grid-cols-2 sm:grid-cols-4 bg-primaryWhite`}
 `;
 
 function ProductList() {
+  const [items] = useState(
+    [...new Array(16)].map(() => ({
+      imageUrl:
+        'https://getir.com/_next/image?url=https%3A%2F%2Flanding-strapi-images-development.s3.eu-west-1.amazonaws.com%2Feveryday_products_d57b2e0bc3.svg&w=256&q=75',
+      price: 14.99,
+      name: 'Gergeous Office Mug',
+    }))
+  );
+  const [pageCount, setPageCount] = useState(0);
+
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 16;
+  const itemLenth = 1000;
+
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setPageCount(Math.ceil(itemLenth / itemsPerPage));
+  }, [itemOffset, itemsPerPage]);
+
+  const handlePageClick = (event: any) => {
+    const newOffset = (event.selected * itemsPerPage) % itemLenth;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
   return (
     <ProductListContainer>
       <ProductListStyle>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {items.map((item, index) => (
+          <Product
+            key={index}
+            imageUrl={item.imageUrl}
+            price={item.price}
+            name={item.name}
+          />
+        ))}
       </ProductListStyle>
+      <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
     </ProductListContainer>
   );
 }

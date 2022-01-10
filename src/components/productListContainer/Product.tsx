@@ -1,5 +1,5 @@
 import { fontSize12, fontSize14, lineHeight20 } from '../styles/common.styled';
-import tw, { css, styled, theme } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
 import ProductImage from './ProductImage';
 
@@ -37,17 +37,19 @@ const addButton = css`
   ${fontSize12}
   ${tw`mt-2 flex items-center justify-center text-primaryWhite bg-primaryBlue`}
 `;
+interface IProductProps {
+  imageUrl?: string;
+  price: number;
+  name: string;
+}
 
-function Product() {
+function Product(props: IProductProps) {
   return (
     <ProductContainer2>
       <ProductContainer>
-        <ProductImage
-          src="https://getir.com/_next/image?url=https%3A%2F%2Flanding-strapi-images-development.s3.eu-west-1.amazonaws.com%2Feveryday_products_d57b2e0bc3.svg&w=256&q=75"
-          title="title"
-        ></ProductImage>
-        <div css={[price]}>₺ 14,99</div>
-        <div css={[productName]}>Gorgeous Office Mug</div>
+        <ProductImage src={props.imageUrl} title="title"></ProductImage>
+        <div css={[price]}>₺ {props.price}</div>
+        <div css={[productName]}>{props.name}</div>
         <button css={[addButton]}>Add</button>
       </ProductContainer>
     </ProductContainer2>

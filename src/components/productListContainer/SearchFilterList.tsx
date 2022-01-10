@@ -1,4 +1,4 @@
-import tw, { css, theme } from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 import Checkbox from '../Checkbox';
 import ISearchFilterList from '../../interfaces/ISearchFilterList';
@@ -28,7 +28,15 @@ const row = css`
 
 const text = css`
   ${letterSpacing('0.16px')}
-  ${tw`ml-3 text-primaryBlack`}
+  ${tw`ml-3`}
+`;
+
+const itemName = css`
+  ${tw`overflow-hidden text-primaryBlack`}
+`;
+
+const count = css`
+  ${tw`pl-1 text-gray2`}
 `;
 
 function SearchFilterList({
@@ -56,7 +64,8 @@ function SearchFilterList({
               selected={false}
             />
             <div css={[text]}>
-              {item.name} ({item.count})
+              <span css={[itemName]}>{item.name}</span>
+              <span css={[count]}>({item.count})</span>
             </div>
           </div>
         );

@@ -1,4 +1,4 @@
-import tw, { css } from 'twin.macro';
+import { css } from 'twin.macro';
 
 const letterSpacing = (size: string) => css`
   letter-spacing: ${size};

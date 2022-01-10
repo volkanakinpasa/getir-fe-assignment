@@ -22,13 +22,13 @@ const list: ISearchFilterList[] = [
     count: 1,
   },
   {
-    value: 'Weissnat-Schowalter-and-Koelpin',
-    name: 'Weissnat, Schowalter and Koelpin',
+    value: 'Weissnat-',
+    name: 'Weissnat, ',
     count: 1,
   },
   {
-    value: 'Cruickshank-Bayer-and-Gerlach',
-    name: 'Cruickshank, Bayer and Gerlach',
+    value: 'Cruickshank-B',
+    name: 'Cruickshank',
     count: 1,
   },
   {

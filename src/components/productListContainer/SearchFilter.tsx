@@ -1,8 +1,4 @@
-import tw, { css } from 'twin.macro';
-
 import Style from '../styles/SearchFilter.styled';
-
-/** @jsxImportSource @emotion/react */
 
 function SearchFilter({
   placeholder,

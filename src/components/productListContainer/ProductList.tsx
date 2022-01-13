@@ -1,8 +1,10 @@
 import tw, { styled } from 'twin.macro';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 import Pagination from './Pagination';
 import Product from './Product';
+import { getProducts } from '../../redux/actions';
 
 const ProductListContainer = styled.div`
   ${tw`w-full mt-4`}
@@ -16,14 +18,12 @@ const ProductListStyle = styled.div`
 `;
 
 function ProductList() {
-  const [items] = useState(
-    [...new Array(16)].map(() => ({
-      imageUrl:
-        'https://getir.com/_next/image?url=https%3A%2F%2Flanding-strapi-images-development.s3.eu-west-1.amazonaws.com%2Feveryday_products_d57b2e0bc3.svg&w=256&q=75',
-      price: 14.99,
-      name: 'Gergeous Office Mug',
-    }))
-  );
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state: any) => {
+    return state.products.products;
+  });
+
   const [pageCount, setPageCount] = useState(0);
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -31,10 +31,14 @@ function ProductList() {
   const itemLenth = 1000;
 
   useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setPageCount(Math.ceil(itemLenth / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+    dispatch(getProducts());
+  }, []);
+
+  // useEffect(() => {
+  //   const endOffset = itemOffset + itemsPerPage;
+  //   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  //   setPageCount(Math.ceil(itemLenth / itemsPerPage));
+  // }, [itemOffset, itemsPerPage]);
 
   const handlePageClick = (event: any) => {
     const newOffset = (event.selected * itemsPerPage) % itemLenth;
@@ -47,12 +51,13 @@ function ProductList() {
   return (
     <ProductListContainer>
       <ProductListStyle>
-        {items.map((item, index) => (
+        {loading && <>loading</>}
+        {data?.map((product: any, index: number) => (
           <Product
             key={index}
-            imageUrl={item.imageUrl}
-            price={item.price}
-            name={item.name}
+            imageUrl={product.imageUrl}
+            price={product.price}
+            name={product.name}
           />
         ))}
       </ProductListStyle>

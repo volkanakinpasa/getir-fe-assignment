@@ -1,4 +1,4 @@
-export default interface IBrand {
+export default interface ITag {
   slug: string;
   name: string;
 }

@@ -1,4 +1,5 @@
 import tw, { css, theme } from 'twin.macro';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { FilterTitle } from '../styles/Title.styled';
 import ISearchFilterList from '../../interfaces/ISearchFilterList';
@@ -39,15 +40,23 @@ const list: ISearchFilterList[] = [
 ];
 
 function FilterBrands() {
+  const dispatch = useDispatch();
+
+  const { brands } = useSelector((state: any) => {
+    return state.products.products;
+  });
+
   const onChange = (value: string) => {
     console.log(value);
   };
 
-  const onSelect = (value: string) => {};
+  const onSelect = (value: string) => {
+    // dispatch(getProducts());
+  };
 
   return (
     <div>
-      <FilterTitle>Tags</FilterTitle>
+      <FilterTitle>Brands</FilterTitle>
       <div css={[container]}>
         <SearchFilter placeholder={'Search brand'} onChange={onChange} />
         <SearchFilterList list={list} onSelect={onSelect} />

@@ -47,7 +47,10 @@ function Product(props: IProductProps) {
   return (
     <ProductContainer2>
       <ProductContainer>
-        <ProductImage src={props.imageUrl} title="title"></ProductImage>
+        <ProductImage
+          src="https://getir.com/_next/image?url=https%3A%2F%2Flanding-strapi-images-development.s3.eu-west-1.amazonaws.com%2Fgetir_groceries_342882c582.svg&w=3840&q=75"
+          title="title"
+        ></ProductImage>
         <div css={[price]}>₺ {props.price}</div>
         <div css={[productName]}>{props.name}</div>
         <button css={[addButton]}>Add</button>

@@ -1,38 +1,36 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getir Home Assignmen
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://localhost:3000](http://localhost:3000)
 
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn server`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs a fake server api.\
+Open [http://localhost:5000](http://localhost:5000)
+
+## NOTE
+
+I've learned Redux, Redux-Saga and Styled Component right before this assignment in order to complete it. I believe there are some style component parts to be improved. Also, since I spent 30 hours in this assigment, I only wanted integrate redux saga and api call by filtering on server side. it's not a complete project but at least i show my approach here like
+
+- fetching products(only 16 items) along with filtered brands, tags and types should be on server side and also sorting ..., othwersie on eacht request I had to fetch entire products, keep in redux store and filter, sorte etc. so I dediced to do it in server.
+- I didn't have time to complete filtering but at least i get brands in search result. it's just matter of listing and handling the clicks on brands. and then passing filtered brands to server again.
+- added a dummy loding in listing page.
 
 ### IMPROVEMENTS
 
-- Left filter bar, sorting, brands, tags can use once container with params.
 - IconChecked passing dublicated svg. (this must be refactored)
-- Add show hide icon on left side for xs, sm, md breakpoints
+- didn't add a "show"/"hide" icon on left side for xs, sm, md breakpoints.
 - I used some common styles in common.styled.ts in order to re-use css. but haven't moved all classes in here.
-- align ... in pagination. and
+- didn't add basket summary.
+- didn't deployed to aws ecs or s3 bucket or vercel.
+- didn't write integration tests.
+
+Summary: I don't expect to be invited for an interview as I haven't completed the whole assignment. But again, this is something like full time work for a week.
